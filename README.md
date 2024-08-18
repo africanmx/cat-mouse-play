@@ -1,5 +1,7 @@
 # Cat and Mouse Play
 
+![Screenshot from the game](public/screencast.webp)
+
 Cat and Mouse Play is a game designed for cats. The objective is for the cat to catch the mouse that appears on the screen. The game is currently under development, and there are some known issues and planned features.
 
 ## Getting Started
