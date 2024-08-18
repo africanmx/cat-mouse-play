@@ -1,0 +1,47 @@
+.gameContainer {
+  width: 80vw;
+  height: 80vh;
+  border: 2px solid #000;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  transition: background-color 0.5s;
+}
+
+.score {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.level {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.welcomeMessage {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.party {
+  background-color: yellow; /* Change background color during party */
+}
+
+.partyMessage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  color: red;
+  animation: partyAnimation 1s infinite;
+}
+
+@keyframes partyAnimation {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
