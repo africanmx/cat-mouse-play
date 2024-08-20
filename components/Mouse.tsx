@@ -67,7 +67,7 @@ const Mouse: React.FC<MouseProps> = ({ onClick, gameStarted, level }) => {
 
   useEffect(() => {
     // Randomly select a mouse image
-    const mouseNumber = Math.floor(Math.random() * 8) + 1;
+    const mouseNumber = Math.floor(Math.random() * 3) + 1;
     setMouseImage(`/mice/mouse0${mouseNumber}.png`);
   }, []);
 

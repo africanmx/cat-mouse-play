@@ -8,7 +8,7 @@ const MAX_MICE = 7; // Maximum number of mice on the screen
 const LEVEL_UP_SCORE = 10; // Score needed to level up
 
 const MouseGame: React.FC = () => {
-  const [mice, setMice] = useState<{ id: number }[]>([]);
+  const [mice, setMice] = useState<{ id: number; type: string }[]>([]);
   const [score, setScore] = useState<number>(() => {
     if (typeof window !== 'undefined') {
       // Load score from local storage
@@ -31,9 +31,11 @@ const MouseGame: React.FC = () => {
   const [party, setParty] = useState(false); // Party mode
 
   useEffect(() => {
-    const numMice = Math.floor(Math.random() * 5) + 1;
-    setMice(Array.from({ length: numMice }, (_, i) => ({ id: i })));
-    setMouseId(numMice);
+    setMice([{
+      id: 0,
+      type: 'normal'
+    }]);
+    setMouseId(1);
   }, []);
 
   const handleMouseClick = useCallback(() => {
@@ -65,7 +67,10 @@ const MouseGame: React.FC = () => {
     const addMouse = () => {
       setMice((prevMice) => {
         if (prevMice.length < MAX_MICE) {
-          const newMouse = { id: mouseId };
+          const newMouse = {
+            id: mouseId,
+            type: Math.random() > 0.5 ? 'normal' : 'fast', // Random mouse type
+          };
           setMouseId((prevId) => prevId + 1);
           return [...prevMice, newMouse];
         }

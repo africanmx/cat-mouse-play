@@ -21,6 +21,12 @@
 }
 
 .welcomeMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
 }
